@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 
-function Reloj() {
+
+function ListaNombres(props) {
+  const nombres = props.nombres;
+  const listaNombres = nombres.map((nombre) =>
+    <li key={nombre.id}>{nombre}</li>
+  );
   return (
-    <div className="App">
-      <h1>Mi primer componente</h1>
-      <h2>Hora: {new Date().toLocaleTimeString()}</h2>
-    </div>
+    <ul>{listaNombres}</ul>
   );
 }
 
-
-export default Reloj;
+export default ListaNombres;
